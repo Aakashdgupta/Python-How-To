@@ -1,4 +1,4 @@
-g#Insertion sort Algorithm
+#Insertion sort Algorithm
 
 
 def insertionSort(array):
