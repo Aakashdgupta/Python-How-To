@@ -1,0 +1,35 @@
+'''
+PROGRAM TO REVERSE A INPUT STRING USING RECURSION
+
+REVERSESTRING FUNCTION TRAKES A STRING AND RETURNS 
+ITS REVERSE 
+
+LET STRING BE CAR 
+IF STRING IS EMPTY STRING RETURNM A EMPTY STRING IS BASECASE
+
+ELSE CALL FUNCTION ON SUBSTRING FROM INDEX 1 TO LAST INDEX
+CALL 1 "HELLO"  RETURNS "ELLO" + "H"
+CALL 2 "ELLO" RETURNS "LLO" + E
+CALL 3 "LLO" RETURNS "LO" + L
+CALL 4 "LO" RETURNS "O" + L
+CALL 5 "O" RETURNS " " + O
+CALL 6 "O" RETURNS " " + " "
+
+AT END ALL RETURNED VALUES COMBINES AS
+" " + O + L + L + E + H
+
+
+'''
+
+st = input(" Enter a String To be reversed  ")
+
+
+def reverseString(s):
+    if s == '':
+        return ""
+    return reverseString(s[1:]) + s[0]
+
+
+st = reverseString(st)
+
+print(st)
