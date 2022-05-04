@@ -1,1 +1,1 @@
-from .numbers import isPrime,isEven
+from .numbers import isPrime,isEven,isOdd

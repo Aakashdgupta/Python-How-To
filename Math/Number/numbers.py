@@ -17,3 +17,9 @@ def isPrime(x):
 
 def isEven(x):
     return x%2==0
+
+
+# isOdd(x) returns True if x is a Odd number else returns false
+
+def isOdd(x):
+    return x%2 != 0
