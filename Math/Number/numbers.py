@@ -11,3 +11,9 @@ def isPrime(x):
         return True
     
     return False
+
+
+# isEven(x) returns True if x is a Even number else returns false
+
+def isEven(x):
+    return x%2==0
