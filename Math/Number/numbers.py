@@ -95,3 +95,13 @@ DIVISIBLE BY SUM OF ITS DIGITS
 def isHarshad(x):
     sum = sumOfDigitsIn(x)
     return x%sum == 0
+
+'''
+IN NUMBERS THEORY ABUNDANT NUMBER IS A NUMBER WHOES SUM OF DIVISORS 
+IS GREATER THAN NUMBER ITSELF'''
+
+def isAbundant(x):
+    sum =0
+    for i in range(1,x):
+        if x%i==0: sum += i
+    return sum>x
