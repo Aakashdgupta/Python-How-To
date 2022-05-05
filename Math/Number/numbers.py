@@ -23,3 +23,13 @@ def isEven(x):
 
 def isOdd(x):
     return x%2 != 0
+
+
+def countDigitsIn(x):
+    count =0
+
+    while x>0:
+        x= x//10
+        count +=1
+    
+    return count
