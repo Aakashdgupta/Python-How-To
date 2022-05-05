@@ -33,3 +33,11 @@ def countDigitsIn(x):
         count +=1
     
     return count
+
+def sumOfDigitsIn(x):
+    sum =0
+
+    while x>0:
+        sum += x%10
+        x = x//10
+    return sum
