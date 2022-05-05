@@ -8,3 +8,4 @@ from .numbers import reverseOf
 from .numbers import isPalindrome
 from .numbers import isArmstrong
 from .numbers import isPerfect
+from .numbers import isHarshad

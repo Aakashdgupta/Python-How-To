@@ -85,3 +85,13 @@ def isPerfect(x):
         if x%i==0: sum += i
     
     return sum ==x
+
+'''
+IN NUMBER THEORY A NUMBER IS A HARSHAD NUMBER IF NUMBER IS PERFECTLY 
+DIVISIBLE BY SUM OF ITS DIGITS 
+171 , 1+7+1 = 9
+171%9 ==0
+'''
+def isHarshad(x):
+    sum = sumOfDigitsIn(x)
+    return x%sum == 0
