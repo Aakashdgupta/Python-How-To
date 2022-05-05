@@ -5,3 +5,4 @@ from .numbers import isOdd
 from .numbers import countDigitsIn
 from .numbers import sumOfDigitsIn
 from .numbers import reverseOf
+from .numbers import isPalindrome

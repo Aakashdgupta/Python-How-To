@@ -51,3 +51,10 @@ def reverseOf(x):
         x = x//10
     
     return rev
+
+'''
+In NUMBER THEORY PALINDROME ARE NUMBERS WHOES REVERSE IS NUMBER ITSELF
+EX 121 
+'''
+def isPalindrome(x):
+    return reverseOf(x) ==x
