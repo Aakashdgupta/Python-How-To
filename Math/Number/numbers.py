@@ -105,3 +105,11 @@ def isAbundant(x):
     for i in range(1,x):
         if x%i==0: sum += i
     return sum>x
+
+'''
+IN NUMBER THEORY AUTOMORPHIC NUMBER IS A NUMBER WHOES
+SQUARE ENDS IN NUMBER ITSELF EX 5 , 5*5 = 25 ENDS WITH 5 '''
+
+def isAutomorphic(x):
+    sqr = x*x
+    return (sqr-x) %10 ==0
