@@ -72,3 +72,16 @@ def isArmstrong(x):
         x = x //10
     
     return temp == sum
+
+'''
+IN NUMBER THEORY PERFECT NUMBER IS A NUMBER WHOES SUM OF DIVISORS 
+EXCLUDING IT SELF IS EQUAL TO ORIGINAL NUMBER
+'''
+def isPerfect(x):
+    sum = 0
+    
+ 
+    for i in range(1,x):
+        if x%i==0: sum += i
+    
+    return sum ==x
