@@ -58,3 +58,17 @@ EX 121
 '''
 def isPalindrome(x):
     return reverseOf(x) ==x
+
+'''
+ARMSTRONG NUMBER EX 407 = 4*4*4 + 0*0*0 + 7*7*7 = 407
+'''
+def isArmstrong(x):
+    temp = x
+    digit_count =countDigitsIn(x)
+    sum = 0
+
+    while x>0:
+        sum += (x%10) **digit_count
+        x = x //10
+    
+    return temp == sum

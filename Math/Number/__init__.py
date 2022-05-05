@@ -6,3 +6,4 @@ from .numbers import countDigitsIn
 from .numbers import sumOfDigitsIn
 from .numbers import reverseOf
 from .numbers import isPalindrome
+from .numbers import isArmstrong
