@@ -1,7 +1,6 @@
 #  isPrime(x) returns True if passed number is prime else false
 
 
-from re import X
 
 
 def isPrime(x):
