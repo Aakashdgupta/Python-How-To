@@ -45,6 +45,17 @@ def sumOfDigitsIn(x):
         x = x//10
     return sum
 
+def productsOfDigitsIn(x):
+    product = 1
+
+    while x>0:
+        product *= x%10
+        x = x//10
+    return product
+
+
+
+
 
 def reverseOf(x):
     rev =0
