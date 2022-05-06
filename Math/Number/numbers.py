@@ -1,6 +1,9 @@
 #  isPrime(x) returns True if passed number is prime else false
 
 
+from re import X
+
+
 def isPrime(x):
     divisionCount =0
     for i in range(1,x+1):
@@ -113,3 +116,14 @@ SQUARE ENDS IN NUMBER ITSELF EX 5 , 5*5 = 25 ENDS WITH 5 '''
 def isAutomorphic(x):
     sqr = x*x
     return (sqr-x) %10 ==0
+
+
+
+""""
+IN NUMBERS THEORY A NEON NUMBER IS A NUMBER WHOES SQUARE'S  SUMS OF DIGITS
+IS EQUAL TO NUMBER IT SELF EX 9 , SQUARE OF 9 = 81 , 8+1 =9 """
+
+def isNeon(x):
+    sqr = x*x
+    sum = sumOfDigitsIn(sqr)
+    return sum==x
