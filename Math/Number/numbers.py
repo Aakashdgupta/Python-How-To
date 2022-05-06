@@ -138,3 +138,10 @@ def isNeon(x):
     sqr = x*x
     sum = sumOfDigitsIn(sqr)
     return sum==x
+
+'''
+IN NUMBERS THEORY A SPY NUMBER IS A NUMBER WHOES SUM OF DIGITS 
+IS EQUAL TO PRODUCT OF DIGITS '''
+
+def isSpy(x):
+    return sumOfDigitsIn(x) == productsOfDigitsIn(x)
