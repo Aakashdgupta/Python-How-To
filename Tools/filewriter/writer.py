@@ -30,12 +30,14 @@ os.chdir(CWD)
 
 # print(os.listdir())
 
-if len(sys.argv)==2:
+if len(sys.argv)>2:
     filename =sys.argv[1]
     noOfLine=sys.argv[2]
 
     filewriter(filename,noOfLine)
-
-
 else :
-    filewriter()
+    filename =input(" Enter File name with extention You wants to write ")
+    noOfLine =input(f" Enter Number of lines You wants to write in {filename} ")
+    noOfLine =int(noOfLine)
+
+    filewriter(filename,noOfLine)   
