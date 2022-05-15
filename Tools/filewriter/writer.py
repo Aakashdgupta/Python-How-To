@@ -3,7 +3,7 @@ import sys
 
 
 #Function definations 
-def filewriter(filename,numberoflines):
+def filewriter(filename="demo.txt",noOfLine=1):
     print(" Enter Text to write ")
     contents = []
     for i in range(int(noOfLine)):
@@ -30,7 +30,12 @@ os.chdir(CWD)
 
 # print(os.listdir())
 
-filename =sys.argv[1]
-noOfLine=sys.argv[2]
+if len(sys.argv)==2:
+    filename =sys.argv[1]
+    noOfLine=sys.argv[2]
 
-filewriter(filename,noOfLine)
+    filewriter(filename,noOfLine)
+
+
+else :
+    filewriter()
