@@ -1,11 +1,12 @@
 import os
+import sys
 # getting current working directory
 CWD = os.getcwd()
 
-# adding Tools folder to path
-CWD = os.path.join(CWD, "Tools")
-# adding filewriter folder to path
-CWD = os.path.join(CWD, "filewriter")
+# # adding Tools folder to path
+# CWD = os.path.join(CWD, "Tools")
+# # adding filewriter folder to path
+# CWD = os.path.join(CWD, "filewriter")
 
 # print(CWD)
 
@@ -14,8 +15,9 @@ os.chdir(CWD)
 
 # print(os.listdir())
 
-filename = input(" Enter the desired file name with extension ")
-noOfLine = input(" Enter number of lines you wants to write ")
+filename =sys.argv[1]
+noOfLine=sys.argv[2]
+
 
 print(" Enter Text to write ")
 contents = []
