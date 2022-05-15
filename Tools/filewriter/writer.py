@@ -1,5 +1,20 @@
 import os
 import sys
+
+
+#Function definations 
+def filewriter(filename,numberoflines):
+    print(" Enter Text to write ")
+    contents = []
+    for i in range(int(noOfLine)):
+        con = input()
+        contents.append(con)
+
+
+    with open(filename, 'w') as f:
+        for con in contents:
+            f.write(con + "\n")
+
 # getting current working directory
 CWD = os.getcwd()
 
@@ -18,14 +33,4 @@ os.chdir(CWD)
 filename =sys.argv[1]
 noOfLine=sys.argv[2]
 
-
-print(" Enter Text to write ")
-contents = []
-for i in range(int(noOfLine)):
-    con = input()
-    contents.append(con)
-
-
-with open(filename, 'w') as f:
-    for con in contents:
-        f.write(con + "\n")
+filewriter(filename,noOfLine)
