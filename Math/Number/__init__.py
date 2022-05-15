@@ -4,3 +4,4 @@ from .numbers import countDigitsIn,sumOfDigitsIn,reverseOf
 from .numbers import isPalindrome,isArmstrong,isPerfect
 from .numbers import isHarshad,isAbundant,isAutomorphic
 from .numbers import isNeon,productsOfDigitsIn,isSpy
+from .numbers import isLeapYear
