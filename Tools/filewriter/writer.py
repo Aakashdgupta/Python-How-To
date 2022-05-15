@@ -1,4 +1,4 @@
-import os
+
 import sys
 
 
@@ -15,20 +15,8 @@ def filewriter(filename="demo.txt",noOfLine=1):
         for con in contents:
             f.write(con + "\n")
 
-# getting current working directory
-CWD = os.getcwd()
 
-# # adding Tools folder to path
-# CWD = os.path.join(CWD, "Tools")
-# # adding filewriter folder to path
-# CWD = os.path.join(CWD, "filewriter")
 
-# print(CWD)
-
-# setting modified path as cwd
-os.chdir(CWD)
-
-# print(os.listdir())
 
 if len(sys.argv)>2:
     filename =sys.argv[1]
