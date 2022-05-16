@@ -15,9 +15,11 @@ def progressbar(cur,total):
         bar *=cur//one_per 
         per =str(len(bar)+1)+"%"
         #striping bar
-        bar =bar[0:-10]
+        bar =bar[0:-9]
         #generating dashes
         dash ='-'*(90-(len(bar)))
+        if cur ==0:
+            print("processing...")
         print(per,bar,dash,end=end)
 
 
