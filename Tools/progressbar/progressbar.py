@@ -20,6 +20,11 @@ def progressbar(cur,total):
         dash ='-'*(90-(len(bar)))
         if cur ==0:
             print("processing...")
+
+        p =str(per+bar+dash)
+        p.encode("utf-8")
+        print(p,end=end)
+        
         print(per,bar,dash,end=end)
 
 
