@@ -22,15 +22,25 @@ class Todo:
 conn = sqlite3.connect("todo.db")
 c = conn.cursor()
 
-# c.execute(''' CREATE TABLE todos (
-#     no integer,
-#     objective text,
-#     finished text,
-#     priority integer,
-#     addedon text,
-#     finishedon text
-# )
-# ''')
+# Create table if it doesnt exists already
+c.execute('''
+SELECT count(name) FROM sqlite_master WHERE type='table' AND name='todos';
+''')
+
+if c.fetchone()[0]==1:
+    # print("TABLE EXISTS ")
+    pass
+else:
+
+    c.execute(''' CREATE TABLE todos (
+        no integer,
+        objective text,
+        finished text,
+        priority integer,
+        addedon text,
+        finishedon text
+    )
+    ''')
 
 def insertTodo(td):
     with conn:
@@ -54,26 +64,4 @@ def removeTodo(no):
     
 
 
-import todo
 
-td1 =todo.Todo(1,"test","false",10,"16 june 2022","notyetfinished")
-td2 =todo.Todo(2,"test 222","false",9,"16 june 2022","notyetfinished")
-
-# insertTodo(td1)
-# insertTodo(td2)
-
-updatefinished(1,"true")
-td = getTodoByfinished("false")
-
-removeTodo(1)
-
-conn.close()
-
-for i in range(len(td)):
-    output =''
-    for j in td[i]:
-        output += f" {j} "
-    
-    print(output)
-# for t in todo:
-#     print(t)
