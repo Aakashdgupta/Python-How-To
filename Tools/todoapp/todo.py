@@ -9,29 +9,42 @@ if len(sys.argv)>1:
         flag =  sys.argv[2]
 
     if cmd=="list" and flag =="all":
-        print("listing All")
-    if cmd=="list" and flag=="finished":
+        print("\t ALL TASKS ")
 
-        print("listing Finished")
+        td = db.getTodoByfinished("false")
+        for i in range(len(td)):
+            status = "Done " if td[i][2] =="true" else "Not Done"
+            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
+            '''
+            print(output)
+
         td = db.getTodoByfinished("true")
         for i in range(len(td)):
-            output =''
-            for j in td[i]:
-                output += f" {j} "
-    
+            status = "Done " if td[i][2] =="true" else "Not Done"
+            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
+            '''
+            print(output)
+
+    if cmd=="list" and flag=="finished":
+
+        print("\t ALL FINISHED TASKS ")
+        td = db.getTodoByfinished("true")
+        for i in range(len(td)):
+            status = "Done " if td[i][2] =="true" else "Not Done"
+            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
+            '''
             print(output)
 
 
     if cmd=="list" and flag =="unfinished":
 
-        print("listing unfinished")
+        print("\t ALL UNFINISAHED TASKS ")
 
         td = db.getTodoByfinished("false")
         for i in range(len(td)):
-            output =''
-            for j in td[i]:
-                output += f" {j} "
-    
+            status = "Done " if td[i][2] =="true" else "Not Done"
+            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
+            '''
             print(output)
 
 
