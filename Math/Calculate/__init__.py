@@ -1,1 +1,1 @@
-from .calculate import mean,median,mode
+from .calculate import mean,median,mode,calculateAge

@@ -38,8 +38,12 @@ def mode(*args):
     for k , v in frequency.items():
         if v ==freq: return k
 
-     
-
+def calculateAge(year,month,date):
+    import datetime
+    today = datetime.datetime.now().date()
+    dob = datetime.date(year,month,date)
+    age = int((today-dob).days/365.25)
+    return age
     
 
 
