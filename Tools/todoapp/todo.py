@@ -1,6 +1,6 @@
 import sys
 import db
-
+import datetime
 
 if len(sys.argv)>1:
     cmd =sys.argv[1]
@@ -54,7 +54,7 @@ if len(sys.argv)>1:
         pk =input(" ENTER PK: ")
         td = input(" ENTER TODO: ")
         fin = "false"
-        dt ="21 june 2022"
+        dt =str(datetime.datetime.now().date())
         pr =input(" ENTER PRIORITY: ")
         pr =int(pr)
         dtFin = " not yet "
