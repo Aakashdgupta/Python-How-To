@@ -71,7 +71,8 @@ if len(sys.argv)>1:
         print("marking Done")
         pk = input(" ENTER KEY ")
         pk =int(pk)
-        db.updatefinished(pk,"true")
+        dt = str(datetime.datetime.now().date())
+        db.updatefinished(pk,"true",dt)
 
     if cmd =="remove":
         pk =input("ENTER KEY ")

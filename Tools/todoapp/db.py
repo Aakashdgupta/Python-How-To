@@ -52,11 +52,11 @@ def getTodoByfinished(finished):
     c.execute("SELECT * FROM todos WHERE finished=:finished",{"finished":finished})
     return c.fetchall()
 
-def updatefinished(no,finished):
+def updatefinished(no,finished,dt):
     with conn:
-        c.execute('''UPDATE todos SET finished =:finished 
+        c.execute('''UPDATE todos SET finished =:finished ,finishedon =:dt
         WHERE no =:no''',
-        {"finished":finished,"no":no})
+        {"finished":finished,"no":no,"dt":dt})
 
 def removeTodo(no):
     with conn:
