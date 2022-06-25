@@ -2,6 +2,23 @@ import sys
 import db
 import datetime
 
+from colorama import Fore,Back,Style
+def coloredTodoText(no,todo,status,added,finished):
+    td = f"  {no} : {todo} "
+    meta = f"  adeed on : {added} finished on {finished}  "
+    if status =="false":
+        print("\t" + Back.WHITE + Fore.RED + td.upper())
+        print(Style.RESET_ALL)
+        print("\t" + Back.WHITE + Fore.BLACK + meta)
+        print(Style.RESET_ALL)
+    if status =="true":
+        print("\t" + Back.WHITE + Fore.GREEN + td.upper())
+        print(Style.RESET_ALL)
+        print("\t" + Back.WHITE + Fore.BLACK + meta)
+        print(Style.RESET_ALL)
+
+
+
 if len(sys.argv)>1:
     cmd =sys.argv[1]
 
@@ -13,27 +30,21 @@ if len(sys.argv)>1:
 
         td = db.getTodoByfinished("false")
         for i in range(len(td)):
-            status = "Done " if td[i][2] =="true" else "Not Done"
-            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
-            '''
-            print(output)
+            coloredTodoText(td[i][0],td[i][1], td[i][2], td[i][4], td[i][-1])
+
 
         td = db.getTodoByfinished("true")
         for i in range(len(td)):
-            status = "Done " if td[i][2] =="true" else "Not Done"
-            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
-            '''
-            print(output)
+            coloredTodoText(td[i][0],td[i][1], td[i][2], td[i][4], td[i][-1])
+           
 
     if cmd=="list" and flag=="finished":
 
         print("\t ALL FINISHED TASKS ")
         td = db.getTodoByfinished("true")
         for i in range(len(td)):
-            status = "Done " if td[i][2] =="true" else "Not Done"
-            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
-            '''
-            print(output)
+            coloredTodoText(td[i][0],td[i][1], td[i][2], td[i][4], td[i][-1])
+
 
 
     if cmd=="list" and flag =="unfinished":
@@ -42,10 +53,7 @@ if len(sys.argv)>1:
 
         td = db.getTodoByfinished("false")
         for i in range(len(td)):
-            status = "Done " if td[i][2] =="true" else "Not Done"
-            output =f''' \n \t No : {td[i][0]} \n \t TODO : {td[i][1]} \n \t Added on : {td[i][4] } \n \t Status : {status} \n \t Priority : {td[i][3]} \n \t Finished on : {td[i][-1]}
-            '''
-            print(output)
+            coloredTodoText(td[i][0],td[i][1], td[i][2], td[i][4], td[i][-1])
 
 
     if cmd=="add":
