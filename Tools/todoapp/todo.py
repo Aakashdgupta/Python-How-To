@@ -8,12 +8,12 @@ def coloredTodoText(no,todo,status,added,finished):
     meta = f"  adeed on : {added} finished on {finished}  "
     if status =="false":
         print("\t" + Back.WHITE + Fore.RED + td.upper())
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL,end="")
         print("\t" + Back.WHITE + Fore.BLACK + meta)
         print(Style.RESET_ALL)
     if status =="true":
         print("\t" + Back.WHITE + Fore.GREEN + td.upper())
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL,end="")
         print("\t" + Back.WHITE + Fore.BLACK + meta)
         print(Style.RESET_ALL)
 
