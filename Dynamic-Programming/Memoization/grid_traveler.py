@@ -18,7 +18,16 @@ def gridTraveler(c,r):
     if c==1 or r==1:return 1
     return gridTraveler(c-1,r) + gridTraveler(c,r-1)
 
+def gridTravelerOptimized(c,r,memo={}):
+    key = f"{c},{r}"
+    if key in memo: return memo[key]
+    if c==0 or r ==0: return 0
+    if c==1 or r==1:return 1
+    w = memo[key] = gridTravelerOptimized(c-1,r) + gridTravelerOptimized(c,r-1)
+    return w
+
 print(gridTraveler(1,3))
 print(gridTraveler(2,3))
 print(gridTraveler(3,2))
 print(gridTraveler(3,3))
+print(gridTravelerOptimized(18,18))
