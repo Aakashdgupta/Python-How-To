@@ -21,6 +21,16 @@ def fib(n):
     if n==0:return 0
     return fib(n-1) + fib(n-2)
 
+def fibOptimized(n,memo={}):
+    if n in memo: return memo[n]
+    if n<=2:return 1
+    if n==0:return 0
+    f = memo[n]=fibOptimized(n-1) + fibOptimized(n-2)
+    return f
+
+
+
 
 print(fib(6))
 print(fib(10))
+print(fibOptimized(100))
