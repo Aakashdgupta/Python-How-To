@@ -33,7 +33,7 @@ if c.fetchone()[0]==1:
 else:
 
     c.execute(''' CREATE TABLE todos (
-        no integer,
+        no INTEGER PRIMARY KEY ,
         objective text,
         finished text,
         priority integer,
@@ -44,8 +44,9 @@ else:
 
 def insertTodo(td):
     with conn:
-        c.execute("INSERT INTO todos VALUES (:no,:objective,:finished,:priority,:addedon,:finishedon)",
-        {"no":td.no,"objective":td.objective,"finished":td.finished,"priority":td.priority,"addedon":td.addedon,"finishedon":td.finishedon})
+        c.execute("INSERT INTO todos(objective,finished,priority,addedon,finishedon) VALUES(?,?,?,?,?)",(td.objective,td.finished,td.priority,td.addedon,td.finishedon))
+        # c.execute("INSERT INTO todos VALUES (:no,:objective,:finished,:priority,:addedon,:finishedon)",
+        # {"no":td.no,objective":td.objective,"finished":td.finished,"priority":td.priority,"addedon":td.addedon,"finishedon":td.finishedon})
     
 
 def getTodoByfinished(finished):
