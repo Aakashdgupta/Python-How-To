@@ -4,8 +4,7 @@ import sqlite3
 
 class Todo:
 
-    def __init__(self,no,objective,finished,priority,addedon,finishedon) -> None:
-        self.no = no
+    def __init__(self,objective,finished,priority,addedon,finishedon) -> None:
         self.objective =objective
         self.finished = finished
         self.priority =priority

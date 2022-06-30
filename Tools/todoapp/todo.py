@@ -59,7 +59,6 @@ if len(sys.argv)>1:
     if cmd=="add":
         print("adding")
 
-        pk =input(" ENTER PK: ")
         td = input(" ENTER TODO: ")
         fin = "false"
         dt =str(datetime.datetime.now().date())
@@ -68,7 +67,7 @@ if len(sys.argv)>1:
         dtFin = " not yet "
 
 
-        MyTodo =db.Todo(pk,td,fin,pr,dt,dtFin)
+        MyTodo =db.Todo(td,fin,pr,dt,dtFin)
         db.insertTodo(MyTodo)
 
         
