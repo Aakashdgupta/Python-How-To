@@ -15,5 +15,27 @@ return any one of the shortest
 
 '''
 
+from math import remainder
+
+
 def bestsum(targetsum,numbers):
-    pass
+    if targetsum == 0 :return []
+    if targetsum <0: return None
+
+    best = None
+
+    for n in numbers:
+        remainder =targetsum - n
+        x =bestsum(remainder,numbers)
+        if x != None:
+            x.append(n)
+            if best == None: best =x
+            if len(best) > len(x):
+                best =x
+
+    return best
+
+    
+print(bestsum(5,[2,3,5]))
+print(bestsum(7,[2,3,5]))
+    
