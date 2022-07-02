@@ -27,5 +27,25 @@ def countConstruct(targetStr,listStr):
             pass
     return count
 
+def countConstructOptimized(targetStr,listStr,memo={}):
+    if targetStr in memo : return memo[targetStr]
+    if len(targetStr) ==0: return 1
+    count =0
+
+    for word in listStr:
+        try:
+            if targetStr.index(word)==0:
+                newstr = targetStr.removeprefix(word)
+                way = countConstructOptimized(newstr,listStr)
+                count +=way
+        except(ValueError):
+            pass
+    memo[targetStr] =count
+    return count
+
+
+
 
 print(countConstruct("abcdef",["ab","cd","ef","abcd","re","abc","def"]))
+print(countConstructOptimized("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeef",
+["e","ee","eee","eeee","eeeee"]))
