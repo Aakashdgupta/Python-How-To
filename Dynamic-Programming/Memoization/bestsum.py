@@ -35,7 +35,27 @@ def bestsum(targetsum,numbers):
 
     return best
 
+def bestsumOptimized(targetsum,numbers,memo={}):
+    if targetsum in memo:return memo[targetsum]
+    if targetsum == 0 :return []
+    if targetsum <0: return None
+
+    best = None
+
+    for n in numbers:
+        remainder =targetsum - n
+        x =bestsumOptimized(remainder,numbers,memo)
+        if x != None:
+            x.append(n)
+            if best == None: best =x
+            if len(best) > len(x):
+                best =x
+                return x
+    res = memo[targetsum] = best
+    return res 
+
     
 print(bestsum(5,[2,3,5]))
 print(bestsum(7,[2,3,5]))
+print(bestsumOptimized(50,[2,3,5]))
     
