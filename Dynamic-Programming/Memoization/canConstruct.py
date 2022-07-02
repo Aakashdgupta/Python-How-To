@@ -12,7 +12,7 @@ or not it is possible to generate the target str using
 string from the array
 
 '''
-from cmath import e
+
 
 
 def canConstruct(targetStr,listStr):
@@ -28,5 +28,24 @@ def canConstruct(targetStr,listStr):
             pass
     return False
 
+
+def canConstructOptimized(targetStr,listStr,memo={}):
+    if targetStr in memo : return memo[targetStr]
+    if len(targetStr)==0 :return True
+
+    for word in listStr:
+        try:
+            if targetStr.index(word)==0:
+                newstr = targetStr.removeprefix(word)
+                if canConstructOptimized(newstr,listStr):
+                    memo[targetStr]=True
+                    return True
+        except(ValueError):
+            pass
+    memo[targetStr]=False
+    return False
+
 print(canConstruct("abcdef",["ab","cd","ef"]))
 print(canConstruct("abcdef",["abcd","cd","efg"]))
+print(canConstructOptimized("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+["e","ee","eee","eeee","eeeee"]))
